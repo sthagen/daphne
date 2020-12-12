@@ -1,9 +1,6 @@
 daphne
 ======
 
-.. image:: https://api.travis-ci.org/django/daphne.svg
-    :target: https://travis-ci.org/django/daphne
-
 .. image:: https://img.shields.io/pypi/v/daphne.svg
     :target: https://pypi.python.org/pypi/daphne
 
@@ -14,10 +11,6 @@ developed to power Django Channels.
 
 It supports automatic negotiation of protocols; there's no need for URL
 prefixing to determine WebSocket endpoints versus HTTP endpoints.
-
-*Note:* Daphne 2 is not compatible with Channels 1.x applications, only with
-Channels 2.x and other ASGI applications. Install a 1.x version of Daphne
-for Channels 1.x support.
 
 
 Running
@@ -61,7 +54,7 @@ Daphne supports terminating HTTP/2 connections natively. You'll
 need to do a couple of things to get it working, though. First, you need to
 make sure you install the Twisted ``http2`` and ``tls`` extras::
 
-    pip install -U Twisted[tls,http2]
+    pip install -U 'Twisted[tls,http2]'
 
 Next, because all current browsers only support HTTP/2 when using TLS, you will
 need to start Daphne with TLS turned on, which can be done using the Twisted endpoint syntax::
@@ -115,7 +108,7 @@ should start with a slash, but not end with one; for example::
 Python Support
 --------------
 
-Daphne requires Python 3.5 or later.
+Daphne requires Python 3.6 or later.
 
 
 Contributing
@@ -127,7 +120,7 @@ Please refer to the
 To run tests, make sure you have installed the ``tests`` extra with the package::
 
     cd daphne/
-    pip install -e .[tests]
+    pip install -e '.[tests]'
     pytest
 
 
